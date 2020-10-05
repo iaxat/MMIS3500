@@ -136,15 +136,15 @@ function312()
 # Program to be run till the number of iterations for 3.14 is two times
 def function314():
     print("This is problem 3.14")
-    pi = 0
+    score = 0
     iterate = 3000
     counter = 0
     times_pi = 0
-    for i in range(0, iterate):
-        pi += ((4.0 * (-1)**i) / (2i + 1))
-        print(,pi)
+    for i in range(1, iterate+1):
+        score += ((4.0 * (-1)**i) / (2*i + 1))
         counter += 1
-        if pi == 3.14:
+        if score == 3.14:
+            print("The value of pi is:", score)
             times_pi += 1
             if times_pi == 2:
                 break
