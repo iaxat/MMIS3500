@@ -6,7 +6,11 @@ def file_read():
     lines = file.readlines()
     for line in lines:
         price = float(line)
+        print("The file read prints following: ")
         print(price)
+
+def profit_loss():
+    print("We will calculate the profit ")
 
 
 # The main function goes here
