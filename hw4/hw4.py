@@ -33,8 +33,15 @@ def file_read():
                 if (current_price < .95*moving_average):
                     buy = prices[i]
                     print(buy)
+                    if first_buy == 0:
+                        first_buy = buy
 
+                elif (current_price > 1.5*moving_average):
+                    iterative_profit = current_price - buy
+                    total_profit += iterative_profit
 
+                else:
+                    
 
             i += 1
 
