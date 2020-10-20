@@ -29,7 +29,7 @@ def file_read():
                 moving_average = (prices[i-1] + prices[i-2] + prices[i-3] + prices[i-4] + prices[i-5]) / 5
                 print("The Moving Average for last 5 days is", moving_average)
                 
-                if (current_price < .95*moving_average):
+                if (current_price < .95*moving_average) and buy == 0:
                     buy = price
                     print("Buying the Stock",buy)
                     if first_buy == 0:
