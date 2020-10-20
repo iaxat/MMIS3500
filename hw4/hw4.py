@@ -19,7 +19,10 @@ def file_read():
         # Getting back to Moving Average
         i = 0
         for price in prices:
-            
+            if i >= 5:
+                moving_average = (prices[i-1] + prices[i-2] + prices[i-3] + prices[i-4] + prices[i-5]) / 5
+                print("The Moving Average for last 5 days is", moving_average)
+                
 
 
     total_avg = add/counter
