@@ -44,12 +44,12 @@ def file_read():
                     print("")
 
                 else:
-                    print("")
+                    pass
 
             i += 1 # Iteration changes the loop process
 
     # Now processing the profits
-    print("We will see the total profits earned from the first buy")
+    print("-----------------------We will see the total profits earned from the first buy----------------------")
     final_profit_percent = (total_profit/first_buy) * 100
     print("")
     print("The total profit percentage is: ", final_profit_percent)
