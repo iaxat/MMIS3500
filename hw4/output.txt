@@ -1,20 +1,16 @@
-('asfdasfsdfadfafewfr', 74.209946, 74.209946)
 ('Buying the Stock', 74.209946)
 ('The first buy is at: ', 74.209946)
 ('Selling stock at: ', 75.344826)
 ('This trade Profit is: ', 1.1348799999999954)
 
-('asfdasfsdfadfafewfr', 66.243423, 66.243423)
 ('Buying the Stock', 66.243423)
 ('Selling stock at: ', 64.319611)
 ('This trade Profit is: ', -1.9238120000000123)
 
-('asfdasfsdfadfafewfr', 66.790947, 66.790947)
 ('Buying the Stock', 66.790947)
 ('Selling stock at: ', 85.84272)
 ('This trade Profit is: ', 19.051772999999997)
 
-('asfdasfsdfadfafewfr', 120.879997, 120.879997)
 ('Buying the Stock', 120.879997)
 -----------------------We will see the total profits earned from the first buy----------------------
 
