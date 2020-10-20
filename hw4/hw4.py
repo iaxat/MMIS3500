@@ -46,7 +46,7 @@ def file_read():
             i += 1 # Iteration changes the loop process
 
     # Now processing the profits
-
+    
 
 
 
