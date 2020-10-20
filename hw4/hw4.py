@@ -9,7 +9,8 @@ def file_read():
     sell = 0
     iterative_profit = 0
     total_profit = 0
-    
+    first_buy = 0
+
     file = open("AAPL.txt", "r")
     lines = file.readlines() # This line reads the lines in the file
     
@@ -29,18 +30,15 @@ def file_read():
                 moving_average = (prices[i-1] + prices[i-2] + prices[i-3] + prices[i-4] + prices[i-5]) / 5
                 print("The Moving Average for last 5 days is", moving_average)
                 if (current_price < .95*moving_average):
-
+                    buy = prices[i]
+                    first_buy
             i += 1
 
 
 
 
     total_avg = add/counter
-    print("Total Average for price is: ", total_avg)
-
-    # Now we will get back on the HW4
-
-
+    print("Total Average for price for the whole list is: ", total_avg)
 
 
 # The main function goes here
