@@ -38,6 +38,7 @@ def file_read():
 
                 elif (current_price > 1.5*moving_average):
                     iterative_profit = current_price - buy
+                    print("This trade Profit is: ", iterative_profit)
                     total_profit += iterative_profit
 
                 else:
@@ -49,7 +50,7 @@ def file_read():
 
 
 
-
+# Unrelated but was in the class video so added
     total_avg = add/counter
     print("Total Average for price for the whole list is: ", total_avg)
 
