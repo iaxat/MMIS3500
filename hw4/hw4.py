@@ -8,7 +8,6 @@ def file_read():
     lines = file.readlines()
     for line in lines:
         price = float(line)
-        print("The file read prints following: ")
         print(price)
         add += price
         counter += 1
