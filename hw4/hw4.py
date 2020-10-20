@@ -49,7 +49,9 @@ def file_read():
             i += 1 # Iteration changes the loop process
 
     # Now processing the profits
+    print("We will see the total profits earned from the first buy")
     
+    print()
 
 
 # Unrelated but was in the class video so added
