@@ -21,31 +21,30 @@ def file_read():
         counter += 1
 
         # Getting back to Moving Average
-        i = 0
-        for price in prices:
-            if i >= 5:
-                current_price = price
-                moving_average = (prices[i-1] + prices[i-2] + prices[i-3] + prices[i-4] + prices[i-5]) / 5
-                # print("The Moving Average for last 5 days is", moving_average)
-                
-                if (current_price < .95*moving_average) and buy == 0:
-                    buy = price
-                    print("Buying the Stock",buy)
-                    if first_buy == 0:
-                        first_buy = buy
-                        print("The first buy is at: ", first_buy)
+    i = 0
+    for price in prices:
+        if i >= 5:
+            current_price = price
+            moving_average = (prices[i-1] + prices[i-2] + prices[i-3] + prices[i-4] + prices[i-5]) / 5
+            # print("The Moving Average for last 5 days is", moving_average)
+            
+            if (current_price < 0.95*moving_average) and buy == 0:
+                buy = current_price
+                print("Buying the Stock",buy)
+                if first_buy == 0:
+                    first_buy = buy
+                    print("The first buy is at: ", first_buy)
 
-                elif (current_price > 1.05*moving_average) and buy!=0:
-                    print("Selling stock at: ", current_price)
-                    iterative_profit = current_price - buy
-                    print("This trade Profit is: ", iterative_profit)
-                    total_profit += iterative_profit
-                    print("")
+            elif (current_price > 1.05*moving_average) and buy!=0:
+                print("Selling stock at: ", current_price)
+                iterative_profit = current_price - buy
+                buy = 0
+                print("This trade Profit is: ", iterative_profit)
+                total_profit += iterative_profit
+                print("")
 
-                else:
-                    pass
 
-            i += 1 # Iteration changes the loop process
+        i += 1 # Iteration changes the loop process
 
     # Now processing the profits
     print("-----------------------We will see the total profits earned from the first buy----------------------")
