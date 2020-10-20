@@ -7,11 +7,14 @@ def file_read():
 
     file = open("AAPL.txt", "r")
     lines = file.readlines() # This line reads the lines in the file
+    
     for line in lines:
+
         price = float(line)
         print(price)
         add += price
         counter += 1
+        
     total_avg = add/counter
     print("Total Average for price is: ", total_avg)
 
