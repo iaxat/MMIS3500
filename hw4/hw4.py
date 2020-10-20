@@ -15,4 +15,3 @@ def profit_loss():
 
 # The main function goes here
 file_read()
-rea
