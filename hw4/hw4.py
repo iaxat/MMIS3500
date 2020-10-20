@@ -6,7 +6,6 @@ def file_read():
     counter = 0 # counter to understand how many counts are there
     prices = []
     buy = 0
-    sell = 0
     iterative_profit = 0
     total_profit = 0
     first_buy = 0
@@ -41,10 +40,10 @@ def file_read():
                     total_profit += iterative_profit
 
                 else:
-                    
+                    print()
 
-            i += 1
-
+            i += 1 # Iteration changes the loop process
+    
 
 
 
