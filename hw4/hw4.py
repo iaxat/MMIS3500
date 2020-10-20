@@ -5,18 +5,18 @@ def file_read():
     add = 0
     counter = 0
     file = open("AAPL.txt", "r")
-    lines = file.readlines()
+    lines = file.readlines() # This line reads the lines in the file
     for line in lines:
         price = float(line)
         print(price)
         add += price
         counter += 1
-    
     total_avg = add/counter
     print("Total Average for price is: ", total_avg)
 
-def profit_loss():
-    print("We will calculate the profit ")
+# Now we will get back on the HW4
+
+
 
 
 # The main function goes here
