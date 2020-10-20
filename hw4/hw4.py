@@ -41,17 +41,19 @@ def file_read():
                     iterative_profit = current_price - buy
                     print("This trade Profit is: ", iterative_profit)
                     total_profit += iterative_profit
-                    print()
+                    print("")
 
                 else:
-                    print()
+                    print("")
 
             i += 1 # Iteration changes the loop process
 
     # Now processing the profits
     print("We will see the total profits earned from the first buy")
     final_profit_percent = (total_profit/first_buy) * 100
+    print("")
     print("The total profit percentage is: ", final_profit_percent)
+    print("")
 
 
 # Unrelated but was in the class video so added
