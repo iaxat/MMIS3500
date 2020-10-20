@@ -2,8 +2,9 @@
 # This assignment is Home Work 4
 
 def file_read():
-    add = 0
-    counter = 0
+    add = 0 # variable for adding total
+    counter = 0 # counter to understand how many counts are there
+
     file = open("AAPL.txt", "r")
     lines = file.readlines() # This line reads the lines in the file
     for line in lines:
