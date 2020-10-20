@@ -15,11 +15,15 @@ def file_read():
         add += price
         counter += 1
 
+        # Getting back to Moving Average
+        
+
+
     total_avg = add/counter
     print("Total Average for price is: ", total_avg)
 
     # Now we will get back on the HW4
-    
+
 
 
 
