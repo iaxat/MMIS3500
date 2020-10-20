@@ -4,7 +4,7 @@
 def file_read():
     add = 0 # variable for adding total
     counter = 0 # counter to understand how many counts are there
-
+    prices = []
     file = open("AAPL.txt", "r")
     lines = file.readlines() # This line reads the lines in the file
     
@@ -12,11 +12,14 @@ def file_read():
 
         price = float(line)
         print(price)
+        prices.append(price)
         add += price
         counter += 1
 
         # Getting back to Moving Average
-        
+        i = 0
+        for price in prices:
+            
 
 
     total_avg = add/counter
