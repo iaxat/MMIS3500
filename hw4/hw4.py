@@ -16,7 +16,6 @@ def file_read():
     for line in lines:
 
         price = float(line)
-        print(price)
         prices.append(price)
         add += price
         counter += 1
@@ -27,7 +26,7 @@ def file_read():
             if i >= 5:
                 current_price = price
                 moving_average = (prices[i-1] + prices[i-2] + prices[i-3] + prices[i-4] + prices[i-5]) / 5
-                print("The Moving Average for last 5 days is", moving_average)
+                # print("The Moving Average for last 5 days is", moving_average)
                 
                 if (current_price < .95*moving_average) and buy == 0:
                     buy = price
