@@ -5,6 +5,11 @@ def file_read():
     add = 0 # variable for adding total
     counter = 0 # counter to understand how many counts are there
     prices = []
+    buy = 0
+    sell = 0
+    iterative_profit = 0
+    total_profit = 0
+    
     file = open("AAPL.txt", "r")
     lines = file.readlines() # This line reads the lines in the file
     
@@ -23,7 +28,8 @@ def file_read():
                 current_price = prices[i]
                 moving_average = (prices[i-1] + prices[i-2] + prices[i-3] + prices[i-4] + prices[i-5]) / 5
                 print("The Moving Average for last 5 days is", moving_average)
-                if (current_price < )
+                if (current_price < .95*moving_average):
+
             i += 1
 
 
