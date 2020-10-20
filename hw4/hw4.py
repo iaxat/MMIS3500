@@ -28,12 +28,11 @@ def file_read():
                 moving_average = (prices[i-1] + prices[i-2] + prices[i-3] + prices[i-4] + prices[i-5]) / 5
                 # print("The Moving Average for last 5 days is", moving_average)
                 
-                if (current_price < .95*moving_average) and buy == 0:
+                if (current_price < .95*moving_average) and buy == 0 and first_buy == 0:
                     buy = price
+                    first_buy = buy
                     print("Buying the Stock",buy)
-                    if first_buy == 0:
-                        first_buy = buy
-                        print("The first buy is at: ", first_buy)
+
 
                 elif (current_price > 1.5*moving_average):
                     print("Selling stock at: ", current_price)
