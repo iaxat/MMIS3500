@@ -25,12 +25,12 @@ def file_read():
         i = 0
         for price in prices:
             if i >= 5:
-                current_price = prices[i]
+                current_price = price
                 moving_average = (prices[i-1] + prices[i-2] + prices[i-3] + prices[i-4] + prices[i-5]) / 5
                 print("The Moving Average for last 5 days is", moving_average)
                 
                 if (current_price < .95*moving_average):
-                    buy = prices[i]
+                    buy = price
                     print("Buying the Stock",buy)
                     if first_buy == 0:
                         first_buy = buy
@@ -46,7 +46,7 @@ def file_read():
             i += 1 # Iteration changes the loop process
 
     # Now processing the profits
-    
+
 
 
 
