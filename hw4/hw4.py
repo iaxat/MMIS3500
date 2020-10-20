@@ -50,8 +50,8 @@ def file_read():
 
     # Now processing the profits
     print("We will see the total profits earned from the first buy")
-    
-    print()
+    final_profit_percent = (total_profit/first_buy) * 100
+    print("The total profit percentage is: ", final_profit_percent)
 
 
 # Unrelated but was in the class video so added
