@@ -14,12 +14,12 @@ def file_read():
         print(price)
         add += price
         counter += 1
-        
+
     total_avg = add/counter
     print("Total Average for price is: ", total_avg)
 
-# Now we will get back on the HW4
-
+    # Now we will get back on the HW4
+    
 
 
 
