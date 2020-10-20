@@ -35,7 +35,7 @@ def file_read():
                         first_buy = buy
                         print("The first buy is at: ", first_buy)
 
-                elif (current_price > 1.5*moving_average):
+                elif (current_price > 1.05*moving_average) and buy!=0:
                     print("Selling stock at: ", current_price)
                     iterative_profit = current_price - buy
                     print("This trade Profit is: ", iterative_profit)
