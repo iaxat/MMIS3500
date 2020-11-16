@@ -9,3 +9,12 @@ def simpleMovingAverage():
 def saveResults():
 
 
+
+
+
+
+
+print('Main Function Here')
+meanReversionStrategy()
+simpleMovingAverage()
+saveResults()
