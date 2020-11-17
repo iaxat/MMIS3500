@@ -5,16 +5,17 @@ import json
 
 # nested Functions
 def start_here():
+    mean_reversion_dict = {}
+    simple_average_dict = {}
 
     # The Mean Reversion Strategy Code Below
-    def meanReversionStrategy(prices):
+    def meanReversionStrategy(prices,file):
         add = 0 # variable for adding total
         counter = 0 # counter to understand how many counts are there
         buy = 0
         iterative_profit = 0
         total_profit = 0
         first_buy = 0
-        mean_reversion_dict = {}
 
             # Getting back to Moving Average
         i = 0
@@ -51,25 +52,28 @@ def start_here():
         print("The total profit percentage is: ", final_profit_percent)
         print("")
 
+        mean_reversion_dict [file] = {'total profit':total_profit,'profit percent':final_profit_percent}
 
         # Unrelated but was in the class video so added
         total_avg = add/counter
         print("Total Average for price for the whole list is: ", total_avg)
 
 
+        # dict_to_json(mean_reversion_dict) 
+
     # # The main function goes here
     # file_read()
 
 
     # Function for simple moving average
-    def simpleMovingAverage(prices):
+    def simpleMovingAverage(prices,file):
         add = 0  # variable for adding total
         counter = 0  # counter to understand how many counts are there
         buy = 0
         iterative_profit = 0
         total_profit = 0
         first_buy = 0
-        simple_average_dict = {}
+
 
         # Getting back to Moving Average
         i = 0
@@ -110,10 +114,13 @@ def start_here():
         total_avg = add/counter
         print("Total Average for price for the whole list is: ", total_avg)
 
+        simple_average_dict[file] = {'total profit': total_profit, 'profit percent': final_profit_percent}
+
+        # dict_to_json(simple_average_dict)
 
 
     # function to safe results to dict and then to json file
-    def saveResults():
+    def dict_to_json(dict_convert):
         print('Save Result')
 
 
@@ -127,12 +134,11 @@ def start_here():
             file = open(file,"r")
             lines = file.readlines()
             for line in lines:
-                ticker = file
                 price = float(line)
                 price_list.append(price)
         
-        meanReversionStrategy(price_list)
-        simpleMovingAverage(price_list)
+            meanReversionStrategy(price_list,file)
+            simpleMovingAverage(price_list,file)
 
 
 
