@@ -12,6 +12,7 @@ def start_here():
         file = open(file,"r")
         lines = file.readlines()
         for line in lines:
+            ticker = file
             price = float(line)
             price_list.append(price)
         
