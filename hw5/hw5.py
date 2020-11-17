@@ -13,6 +13,7 @@ def meanReversionStrategy():
     iterative_profit = 0
     total_profit = 0
     first_buy = 0
+    mean_reversion_dict = {}
 
     file = open("AAPL.txt", "r")
     lines = file.readlines() # This line reads the lines in the file
