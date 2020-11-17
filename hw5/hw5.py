@@ -127,12 +127,9 @@ def start_here():
 
 
 
-    # function to safe results to dict and then to json file
-    def saveResults():
-        print('Save Result')
+        # function to safe results to dict and then to json file
+        def saveResults():
+            print('Save Result')
 
 
-    # print('Main Function Here')
-    # meanReversionStrategy()
-    # simpleMovingAverage()
-    # saveResults()
+# ------------------------------------------------------------------------------------------------------
