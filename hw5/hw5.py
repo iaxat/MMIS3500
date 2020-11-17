@@ -120,8 +120,8 @@ def simpleMovingAverage(prices,file):
 
 
 # function to safe results to dict and then to json file
-def dict_to_json(dict_convert):
-    print('Save Result')
+def dict_to_json(dict_):
+    print(dict_)
 
 
 
@@ -129,16 +129,16 @@ def dict_to_json(dict_convert):
 def file_read():
     # Function for mean reversion strategy
     file_names_list = ['AAPL.txt','CSCO.txt','FB.txt','GOOGL.txt','JPM.txt','MSFT.txt','TMUS.txt','TSLA.txt','TTM.txt','XOM.txt']
-    for file in file_names_list:
+    for file_name in file_names_list:
         price_list = []
-        file = open(file,"r")
+        file = open(file_name,"r")
         lines = file.readlines()
         for line in lines:
             price = float(line)
             price_list.append(price)
     
-        meanReversionStrategy(price_list,file)
-        simpleMovingAverage(price_list,file)
+        meanReversionStrategy(price_list,file_name)
+        simpleMovingAverage(price_list,file_name)
     
     dict_to_json(mean_reversion_dict)
     dict_to_json(simple_average_dict)
