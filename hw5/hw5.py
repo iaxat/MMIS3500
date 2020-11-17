@@ -80,8 +80,6 @@ def file_read():
         print('Save Result')
 
 
-
-
     # print('Main Function Here')
     # meanReversionStrategy()
     # simpleMovingAverage()
