@@ -6,6 +6,13 @@ import json
 # nested Functions
 def file_read():
     # Function for mean reversion strategy
+    file_names_list = []
+    
+    
+    
+    
+    
+    
     def meanReversionStrategy():
         add = 0 # variable for adding total
         counter = 0 # counter to understand how many counts are there
