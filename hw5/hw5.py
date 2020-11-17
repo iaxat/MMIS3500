@@ -58,7 +58,6 @@ def meanReversionStrategy(prices,file):
     print("Total Average for price for the whole list is: ", total_avg)
 
 
-    dict_to_json(mean_reversion_dict)
 
 # # The main function goes here
 # file_read()
@@ -116,14 +115,15 @@ def simpleMovingAverage(prices,file):
     simple_average_dict[file] = {'total profit': total_profit, 'profit percent': final_profit_percent}
 
 
-    
-
-
 # function to safe results to dict and then to json file
-def dict_to_json(dict_):
-    print(dict_)
-
-
+def dict_to_json(dict1,dict2):
+    # print(dict_)
+    # json_object = json.dumps(dict_)
+    # print(json_object)
+    with open("mean_reversion.json", "w") as outfile:
+        json.dump(dict1, outfile)
+    with open("simple_average.json", "w") as outfile:
+        json.dump(dict2, outfile)
 
 
 def file_read():
@@ -140,8 +140,7 @@ def file_read():
         meanReversionStrategy(price_list,file_name)
         simpleMovingAverage(price_list,file_name)
     
-    dict_to_json(mean_reversion_dict)
-    dict_to_json(simple_average_dict)
+    dict_to_json(mean_reversion_dict, simple_average_dict)
 
 
 # ------------------------------------------------------------------------------------------------------
