@@ -83,7 +83,7 @@ def start_here():
             iterative_profit = 0
             total_profit = 0
             first_buy = 0
-            mean_reversion_dict = {}
+            simple_average_dict = {}
 
             # Getting back to Moving Average
             i = 0
@@ -96,14 +96,14 @@ def start_here():
                         prices[i-1] + prices[i-2] + prices[i-3] + prices[i-4] + prices[i-5]) / 5
                     # print("The Moving Average for last 5 days is", moving_average)
 
-                    if (current_price < 0.95*moving_average) and buy == 0:
+                    if (current_price > moving_average) and buy == 0:
                         buy = current_price
                         print("Buying the Stock", buy)
                         if first_buy == 0:
                             first_buy = buy
                             print("The first buy is at: ", first_buy)
 
-                    elif (current_price > 1.05*moving_average) and buy != 0:
+                    elif (current_price < moving_average) and buy != 0:
                         print("Selling stock at: ", current_price)
                         iterative_profit = current_price - buy
                         buy = 0
