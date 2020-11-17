@@ -9,13 +9,9 @@ def file_read():
     file_names_list = ['AAPL.txt','CSCO.txt','FB.txt','GOOGL.txt','JPM.txt','MSFT.txt','TMUS.txt','TSLA.txt','TTM.txt','XOM.txt']
     for file in file_names_list:
         file = open(file,"r")
-        lines = file.readlines()
-
     
     
-    
-    
-    
+        # The Function to perform 
         def meanReversionStrategy():
             add = 0 # variable for adding total
             counter = 0 # counter to understand how many counts are there
@@ -26,7 +22,6 @@ def file_read():
             first_buy = 0
             mean_reversion_dict = {}
 
-            file = open("AAPL.txt", "r")
             lines = file.readlines() # This line reads the lines in the file
             
             for line in lines:
