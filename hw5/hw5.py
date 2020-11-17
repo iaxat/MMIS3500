@@ -8,15 +8,16 @@ def file_read():
     # Function for mean reversion strategy
     file_names_list = ['AAPL.txt','CSCO.txt','FB.txt','GOOGL.txt','JPM.txt','MSFT.txt','TMUS.txt','TSLA.txt','TTM.txt','XOM.txt']
     for file in file_names_list:
+        price_list = []
         file = open(file,"r")
         lines = file.readlines()
-
+        
     
         # The Mean Reversion Strategy Code Below
         def meanReversionStrategy():
             add = 0 # variable for adding total
             counter = 0 # counter to understand how many counts are there
-            prices = []
+            prices = price_list
             buy = 0
             iterative_profit = 0
             total_profit = 0
