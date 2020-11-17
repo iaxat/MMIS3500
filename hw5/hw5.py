@@ -120,16 +120,16 @@ def start_here():
 
 
     def file_read():
-    # Function for mean reversion strategy
-    file_names_list = ['AAPL.txt','CSCO.txt','FB.txt','GOOGL.txt','JPM.txt','MSFT.txt','TMUS.txt','TSLA.txt','TTM.txt','XOM.txt']
-    for file in file_names_list:
-        price_list = []
-        file = open(file,"r")
-        lines = file.readlines()
-        for line in lines:
-            ticker = file
-            price = float(line)
-            price_list.append(price)
+        # Function for mean reversion strategy
+        file_names_list = ['AAPL.txt','CSCO.txt','FB.txt','GOOGL.txt','JPM.txt','MSFT.txt','TMUS.txt','TSLA.txt','TTM.txt','XOM.txt']
+        for file in file_names_list:
+            price_list = []
+            file = open(file,"r")
+            lines = file.readlines()
+            for line in lines:
+                ticker = file
+                price = float(line)
+                price_list.append(price)
         
         meanReversionStrategy(price_list)
         simpleMovingAverage(price_list)
