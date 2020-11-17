@@ -7,7 +7,8 @@ import json
 def file_read():
     # Function for mean reversion strategy
     file_names_list = ['AAPL.txt','CSCO.txt','FB.txt','GOOGL.txt','JPM.txt','MSFT.txt','TMUS.txt','TSLA.txt','TTM.txt','XOM.txt']
-    
+    for file in file_names_list:
+        
     
     
     
