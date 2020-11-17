@@ -12,10 +12,7 @@ def file_read():
         lines = file.readlines()
 
     
-    
-    
-    
-    
+        # The Mean Reversion Strategy Code Below
         def meanReversionStrategy():
             add = 0 # variable for adding total
             counter = 0 # counter to understand how many counts are there
