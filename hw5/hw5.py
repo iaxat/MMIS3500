@@ -11,7 +11,10 @@ def file_read():
         price_list = []
         file = open(file,"r")
         lines = file.readlines()
-        
+        for line in lines:
+            price = float(line)
+            price_list.append(price)
+            
     
         # The Mean Reversion Strategy Code Below
         def meanReversionStrategy():
@@ -24,19 +27,11 @@ def file_read():
             first_buy = 0
             mean_reversion_dict = {}
 
-            file = open("AAPL.txt", "r")
-            lines = file.readlines() # This line reads the lines in the file
-            
-            for line in lines:
-
-                price = float(line)
-                prices.append(price)
-                add += price
-                counter += 1
-
                 # Getting back to Moving Average
             i = 0
             for price in prices:
+                add += price
+                counter += 1
                 if i >= 5:
                     current_price = price
                     moving_average = (prices[i-1] + prices[i-2] + prices[i-3] + prices[i-4] + prices[i-5]) / 5
