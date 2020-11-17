@@ -115,7 +115,8 @@ def simpleMovingAverage(prices,file):
 
     simple_average_dict[file] = {'total profit': total_profit, 'profit percent': final_profit_percent}
 
-    # dict_to_json(simple_average_dict)
+
+    
 
 
 # function to safe results to dict and then to json file
@@ -138,7 +139,9 @@ def file_read():
     
         meanReversionStrategy(price_list,file)
         simpleMovingAverage(price_list,file)
-
+    
+    dict_to_json(mean_reversion_dict)
+    dict_to_json(simple_average_dict)
 
 
 # ------------------------------------------------------------------------------------------------------
