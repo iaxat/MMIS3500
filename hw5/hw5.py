@@ -58,7 +58,7 @@ def meanReversionStrategy():
     print("")
 
 
-# Unrelated but was in the class video so added
+    # Unrelated but was in the class video so added
     total_avg = add/counter
     print("Total Average for price for the whole list is: ", total_avg)
 
