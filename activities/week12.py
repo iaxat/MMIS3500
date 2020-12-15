@@ -43,7 +43,11 @@ class Person():
     def set_age(self, age):
         self.age = age
 
-    def set_
+    def set_height(self,height):
+        self.height = height
+    
+    def set_grades(self, grades):
+        self.grades = grades
 
 p1 = Person("andy", 39, 75, [85, 90, 93])
 print(p1)
