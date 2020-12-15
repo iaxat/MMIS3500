@@ -16,3 +16,7 @@ with open('output2.txt','w') as file2:
 import os
 
 os.rename('output1.txt', 'output_rename.txt')
+
+
+
+# JSON Section 9.5
