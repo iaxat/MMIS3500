@@ -10,3 +10,8 @@ file1.write('goodbye\n')
 
 with open('output2.txt','w') as file2:
     file2.write('hello goodbye')
+
+
+# File OS Module 9.4
+import os
+
