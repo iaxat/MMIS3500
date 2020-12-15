@@ -31,3 +31,6 @@ my_hobbies['tv_shows'] = ['the office','press your luck']
 print(my_hobbies)
 
 json.dump(my_hobbies,open('my_hobbies.json', 'w'))
+
+d1 = json.load(open('my_hobbies.json','r'))
+print(d1)
