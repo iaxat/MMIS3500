@@ -24,6 +24,27 @@ class Person():
         return np.mean(self.grades)
 
 
+    def get_name(self):
+        return self.name
+    
+    def get_age(self):
+        return self.height
+
+    def get_height(self):
+        return self.height
+
+    def get_grades(self):
+        return self.grades
+    
+
+    def set_name(self,name):
+        self.name = name
+    
+    def set_age(self, age):
+        self.age = age
+
+    def set_
+
 p1 = Person("andy", 39, 75, [85, 90, 93])
 print(p1)
 print(p1.name)
