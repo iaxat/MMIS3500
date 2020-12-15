@@ -62,5 +62,8 @@ df = pandas.read_csv("AAPL.csv")
 # print(df)
 print(df.keys())
 
-# print(df["Adj Close"])
+print(df["Adj Close"])
+
+for price in 
+
 # print(df.head())
