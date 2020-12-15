@@ -1,7 +1,5 @@
 # Week 11
 
-
-
 # Content Videos
 # Files Section 9.3
 file1 = open("output1.txt",'w')
