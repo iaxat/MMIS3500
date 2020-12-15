@@ -64,6 +64,8 @@ print(df.keys())
 
 print(df["Adj Close"])
 
-for price in 
+for price in df["Adj Close"]:
+    print(price)
 
 # print(df.head())
+
