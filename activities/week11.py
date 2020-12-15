@@ -15,3 +15,4 @@ with open('output2.txt','w') as file2:
 # File OS Module 9.4
 import os
 
+os.rename('output1.txt', 'output_rename.txt')
