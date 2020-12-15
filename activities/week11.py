@@ -72,4 +72,3 @@ for price in df["Adj Close"]:
 
 
 # ZOOM SESSION 11.1 PROGRAMMING ACTIVITIES
-
