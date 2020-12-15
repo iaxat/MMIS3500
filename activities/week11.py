@@ -10,6 +10,7 @@ with open('output2.txt','w') as file2:
     file2.write('hello goodbye')
 
 
+
 # File OS Module 9.4
 import os
 
@@ -34,6 +35,7 @@ d1 = json.load(open('my_hobbies.json','r'))
 print(d1)
 
 
+
 # Handling Exceptions 9.8
 try:
     open('this file')
@@ -47,6 +49,7 @@ except:
     print('throw denominator')
 
 print('still running')
+
 
 
 # Pandas Module 9.12
