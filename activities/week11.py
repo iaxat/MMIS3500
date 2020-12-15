@@ -37,3 +37,7 @@ print(d1)
 
 
 # Handling Exceptions 9.8
+try:
+    open('this file')
+except:
+    
