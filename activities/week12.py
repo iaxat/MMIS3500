@@ -19,3 +19,7 @@ class Person():
         self.age = age
         self.height = height
         self.grades = grades
+
+
+p1 = Person("andy", 39, 75, [85, 90, 93])
+print(p1)
