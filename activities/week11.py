@@ -42,3 +42,10 @@ try:
 except:
     print('this file does not exist')
 
+try:
+    print(0/5)
+    print(5/0)
+except:
+    print('throw denominator')
+
+print('still running')
