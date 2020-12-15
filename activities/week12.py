@@ -8,9 +8,11 @@ person = {}
 person["name"] = "andy"
 person["age"] = 39
 person["height"] = 75
-person["grades"] = [85,90,93]
+person["grades"] = [85, 90, 93]
 
 print("person_dict: ", person)
 
+
 class Person():
-    
+    def __init__(self) -> None:
+        super().__init__()
