@@ -59,4 +59,6 @@ import numpy
 
 # Section 9.12.2
 df = pandas.read_csv("AAPL.csv")
-print(df)
+# print(df)
+
+print(df.head())
