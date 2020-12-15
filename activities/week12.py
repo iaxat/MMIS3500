@@ -14,5 +14,8 @@ print("person_dict: ", person)
 
 
 class Person():
-    def __init__(self) -> None:
-        super().__init__()
+    def __init__(self, name, age, height, grades):
+        self.name = name
+        self.age = age
+        self.height = height
+        self.grades = grades
