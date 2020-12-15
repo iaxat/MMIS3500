@@ -4,3 +4,5 @@
 
 # The project is based on Stock Market
 
+# Pre-requisites of the Project
+
