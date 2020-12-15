@@ -20,3 +20,14 @@ os.rename('output1.txt', 'output_rename.txt')
 
 
 # JSON Section 9.5
+import json
+
+my_hobbies = {}
+
+my_hobbies['sports'] = ['rugby','basketball','football','soccer']
+my_hobbies['arts'] = ['music','painting']
+my_hobbies['tv_shows'] = ['the office','press your luck']
+
+print(my_hobbies)
+
+json.dump(my_hobbies,open('my_hobbies.json', 'w'))
