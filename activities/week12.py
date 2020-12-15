@@ -23,3 +23,7 @@ class Person():
 
 p1 = Person("andy", 39, 75, [85, 90, 93])
 print(p1)
+print(p1.name)
+print(p1.age)
+print(p1.height)
+print(p1.grades)
