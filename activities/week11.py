@@ -60,7 +60,7 @@ import numpy
 # Section 9.12.2
 df = pandas.read_csv("AAPL.csv")
 # print(df)
-# print(df.keys())
+print(df.keys())
 
 # print(df["Adj Close"])
-print(df.head())
+# print(df.head())
