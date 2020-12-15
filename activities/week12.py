@@ -60,4 +60,5 @@ print(p1.calc_avg_grades())
 
 #  Section 10.3
 # Continuation of Classes and Objects
+# The getter and setters are in this section for the program whose functions have been defined above
 
