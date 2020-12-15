@@ -40,4 +40,4 @@ print(d1)
 try:
     open('this file')
 except:
-    
+    print('this file does not exist')
