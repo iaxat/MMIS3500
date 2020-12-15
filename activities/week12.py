@@ -33,5 +33,4 @@ print(p1.grades)
 print(p1.calc_avg_grades())
 
 
-# Starting again the section
-
+#  Section 10.3
