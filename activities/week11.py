@@ -69,3 +69,7 @@ for price in df["Adj Close"]:
 
 # print(df.head())
 
+
+
+# ZOOM SESSION 11.1 PROGRAMMING ACTIVITIES
+
