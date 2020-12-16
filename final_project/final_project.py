@@ -21,12 +21,6 @@ import numpy as np
 # requests imported to handle API key
 # wait for 1 sec
 
-
-tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
-           'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
-results_dict = {}
-
-
 def append_data(ticker):
     url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
         ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
@@ -64,6 +58,7 @@ def append_data(ticker):
 
 
 def meanReversionStrategy(prices, file):
+    results_dict = {}
     add = 0  # variable for adding total
     counter = 0  # counter to understand how many counts are there
     buy = 0
@@ -113,9 +108,12 @@ def meanReversionStrategy(prices, file):
     total_avg = add/counter
     print("Total Average for price for the whole list is: ", total_avg)
 
+    return results_dict
+
 
 # Function for simple moving average
 def simpleMovingAverage(prices, file):
+    results_dict = {}
     add = 0  # variable for adding total
     counter = 0  # counter to understand how many counts are there
     buy = 0
@@ -165,8 +163,11 @@ def simpleMovingAverage(prices, file):
     results_dict[file] = {
         'total profit': total_profit, 'profit percent': final_profit_percent}
 
+    return results_dict
+
 
 def bb(prices, file):
+    results_dict = {}
     add = 0  # variable for adding total
     counter = 0  # counter to understand how many counts are there
     buy = 0
@@ -216,10 +217,14 @@ def bb(prices, file):
     total_avg = add/counter
     print("Total Average for price for the whole list is: ", total_avg)
 
+    return results_dict
 
 
-# Program Running
-for ticker in tickers:
-    append_data(ticker)
-    time.sleep(13)
-    # price_list(web_json(ticker))
+
+def results(algo1,algo2,algo3):
+    final_result = {}
+    tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
+               'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
+    for ticker in tickers:
+        append_data(ticker)
+        time.sleep(13)
