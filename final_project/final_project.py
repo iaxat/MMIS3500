@@ -59,7 +59,7 @@ def append_data(ticker):
     return fil
 # function ends here
 
-def price_list(file):
+# def price_list(file):
 
 
 
