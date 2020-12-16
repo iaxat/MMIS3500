@@ -8,9 +8,9 @@
 # 3. Auto-update
 # 4. Three Analysis on the data
 # 5. Results inside results.json
-# NG9C9EPVYBMQT0C8
 
-# API Key Generated = 3D9FOUWO02NOZH93
+
+# API Key = NG9C9EPVYBMQT0C8
 
 # Library imports
 import json
@@ -25,11 +25,9 @@ def web_json(ticker):
     url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
         ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
     req = requests.get(url)
-    # print(req.text)
 
     req_dct = json.loads(req.text)
     json.dump(req_dct, open(ticker+".json","w"))
-
 
     key1 = "Time Series (Daily)"
     key2 = "4. close"
@@ -44,20 +42,12 @@ def web_json(ticker):
 
 
 tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
-                 'JPM']
+                 'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
+
 
 for ticker in tickers:
+    time.sleep(30)
     web_json(ticker)
 
 
 
-# processing_json()
-# def data_extraction():
-#     tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
-#                 'JPM', 'MSFT']
-#     for ticker in tickers:
-#         processing_json(ticker)
-#         time.sleep(1)
-
-# if __name__ == "__main__":
-#     data_extraction()
