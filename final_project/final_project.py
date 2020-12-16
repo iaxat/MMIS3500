@@ -18,36 +18,30 @@ import time
 # json import to handle the json files
 # requests imported to handle API key
 # wait for 1 sec
-
-def append_data(ticker):
+def append_data():
+    ticker = 'AAPL'
     url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
         ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
-    # url is for creating the request for getting data
     req = requests.get(url)
+    time.sleep(12)
 
-    req_dct = json.loads(req.text)
+    req_dict = json.loads(req.text)
 
-    key1 = "Time Series (Daily)"
-    key2 = "4. close"
+    print(req_dict.keys())
 
-    fil = open(ticker+".csv", "w")
-    lines = fil.readlines()
-    last_date = lines[-1].split(",")[0]
+    key1 = "Time Series (Daily)"  # dictionary with all prices by date
+    key2 = '4. close'
 
-    new_lines = []
-    for date in req_dct[key1]:
-        if date == last_date:
-            break
-        print(date + "," + req_dct[key1][date][key2])
-        # fil.write(date + "," + req_dct[key1][date][key2]+"\n")
-        new_lines.append(date + "," + req_dct[key1][date][key2]+"\n")
+    csv_file = open(ticker + ".csv", "w")
+    csv_file.write("Date,AAPL\n")
+    write_lines = []
+    for date in req_dict[key1]:
+        print(date + "," + req_dict[key1][date][key2])  # print key, value
+        write_lines.append(date + "," + req_dict[key1][date][key2]+"\n")
 
-    new_lines = new_lines[::-1]
-    fil = open(ticker + ".csv", "a")
-    fil.writelines(new_lines)
-    fil.close()
-    
-    return fil
+    write_lines = write_lines[::-1]
+    csv_file.writelines(write_lines)
+    csv_file.close()
     # function ends here
 
 def meanReversionStrategy(prices, file):
@@ -230,4 +224,4 @@ def bb(prices, file):
     
 # results()
 
-append_data('AAPL')
+append_data()
