@@ -44,11 +44,14 @@ def web_json(ticker):
     new_lines = []
 
     for date in req_dct[key1]:
-        
-        # print(date + "," + req_dct[key1][date][key2])
-        write_lines.append(date + "," + req_dct[key1][date][key2]+"\n")
-    write_lines = write_lines[::-1]
-    fil.writelines(write_lines)
+        if date == last_date:
+            break
+        print(date + "," + req_dct[key1][date][key2])
+        new_lines.append(date + "," + req_dct[key1][date][key2]+"\n")
+    
+    new_lines = new_lines[::-1]
+    fil = open(ticker + ".csv", "a")
+    fil.writelines(new_lines)
     fil.close()
 
 
