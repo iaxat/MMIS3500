@@ -23,5 +23,8 @@ import time
 
 class Final_project():
     def data_extraction(self):
-        tickers = ['AAPL','','','','','','','','','']
+        tickers = ['AAPL','CSCO','FB','GOOGL','JPM','MSFT','TMUS','TSLA','TTM','XOM']
+
+
+    def processing_json(self):
         
