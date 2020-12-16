@@ -20,3 +20,5 @@ import requests
 # json import to handle the json files
 # requests imported to handle API key
 
+class final_project():
+    
