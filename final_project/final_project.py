@@ -21,6 +21,13 @@ import numpy as np
 # requests imported to handle API key
 # wait for 1 sec
 
+
+tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
+           'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
+mean_reversion_dict = {}
+simple_average_dict = {}
+
+
 def web_json(ticker):
     url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
         ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
@@ -62,17 +69,12 @@ def price_list(file):
     
 
 
-# Starting Program
-tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
-                 'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
+
 
 for ticker in tickers:
     time.sleep(13)
     price_list(web_json(ticker))
 
-
-mean_reversion_dict = {}
-simple_average_dict = {}
 
 def meanReversionStrategy(prices, file):
     add = 0  # variable for adding total
