@@ -27,33 +27,31 @@ def web_json():
     url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
         ticker+'&outputsize=full&apikey=3D9FOUWO02NOZH93'
     req = requests.get(url)
-    print(req.text)
+    # print(req.text)
 
     req_dct = json.loads(req.text)
-    json.dump(req_dct, open("data.json","w"))
-      
-
+    json.dump(req_dct, open(ticker+".json","w"))
 web_json()
 
+def processing_json():
+    # ticker = 'AAPL'
+    # url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
+    #     ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
+    # request = requests.get(url)
+    rqst_dictonary = json.loads("AAPL.json")
 
-# def processing_json(ticker):
-#     url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
-#         ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
-#     request = requests.get(url)
-#     rqst_dictonary = json.loads(request.text)
+    key1 = "Time Series (Daily)"
+    # date all  of themn
+    key2 = "4. close"
 
-#     key1 = "Time Series (Daily)"
-#     # date all  of themn
-#     key2 = "4. close"
+    fil = open(ticker+".csv", "w")
+    fil.write("Date,price\n")
 
-#     fil = open(ticker+".csv", "w")
-#     fil.write("Date,price\n")
-
-#     for date in rqst_dictonary[key1]:
-#         # print(date + "," + rqst_dictonary[key1][date][key2])
-#         fil.write(date + "," + rqst_dictonary[key1][date][key2]+"\n")
-#     fil.close()
-
+    for date in rqst_dictonary[key1]:
+        # print(date + "," + rqst_dictonary[key1][date][key2])
+        fil.write(date + "," + rqst_dictonary[key1][date][key2]+"\n")
+    fil.close()
+processing_json()
 # def data_extraction():
 #     tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
 #                 'JPM', 'MSFT']
