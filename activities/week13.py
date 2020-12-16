@@ -3,7 +3,7 @@
 import requests
 import json
 
-ticker = 'AAPL'
+ticker = 'TSLA'
 url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
     ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
 
@@ -15,8 +15,7 @@ print(request.text)
 rqst_dict = json.loads(request.text)
 print(rqst_dict)
 
-
 json.dump(rqst_dict,open(ticker+".csv", "w"))
-
+json.dump(rqst_dict, open(result+".json", "w"))
 
 # Processing JSON
