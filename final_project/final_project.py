@@ -35,12 +35,16 @@ def web_json(ticker):
     key1 = "Time Series (Daily)"
     key2 = "4. close"
 
+    fil = open(ticker+".csv","r")
+    lines = fil.readlines()
+    last_date = lines[-1].split(",")[0]
     fil = open(ticker+".csv", "w")
     fil.write("Date,price\n")
 
-    write_lines = []
+    new_lines = []
 
     for date in req_dct[key1]:
+        
         # print(date + "," + req_dct[key1][date][key2])
         write_lines.append(date + "," + req_dct[key1][date][key2]+"\n")
     write_lines = write_lines[::-1]
