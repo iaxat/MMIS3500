@@ -44,7 +44,7 @@ def web_json(ticker):
         # print(date + "," + req_dct[key1][date][key2])
         write_lines.append(date + "," + req_dct[key1][date][key2]+"\n")
     write_lines = write_lines[::-1]
-    fil.writelines
+    fil.writelines(write_lines)
     fil.close()
 
 
