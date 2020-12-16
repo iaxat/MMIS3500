@@ -61,6 +61,10 @@ def meanReversionStrategy(prices, file):
     print("Total Average for price for the whole list is: ", total_avg)
 
 
+# # The main function goes here
+# file_read()
+
+
 # Function for simple moving average
 def simpleMovingAverage(prices, file):
     add = 0  # variable for adding total
@@ -147,6 +151,9 @@ def file_read():
         simpleMovingAverage(price_list, file_name)
 
     dict_to_json(mean_reversion_dict, simple_average_dict)
+
+
 # ------------------------------------------------------------------------------------------------------
+
 if __name__ == "__main__":
     file_read()

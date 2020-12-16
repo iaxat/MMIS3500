@@ -65,7 +65,7 @@ def web_json(ticker):
 # function ends here
 
 def price_list(file):
-        
+
 
 
 def meanReversionStrategy(prices, file):
@@ -175,3 +175,9 @@ def simpleMovingAverage(prices, file):
 for ticker in tickers:
     time.sleep(13)
     price_list(web_json(ticker))
+
+
+# append makes data dissaoear
+# just pick price list from csv
+# result.json should be like?
+# 
