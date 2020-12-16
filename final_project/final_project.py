@@ -21,10 +21,30 @@ import time
 # json import to handle the json files
 # requests imported to handle API key
 
-class Final_project():
-    def data_extraction(self):
-        tickers = ['AAPL','CSCO','FB','GOOGL','JPM','MSFT','TMUS','TSLA','TTM','XOM']
 
 
-    def processing_json(self):
-        
+def processing_json(ticker):
+    url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
+        ticker+'&outputsize=full&apikey=3D9FOUWO02NOZH93'
+    request = requests.get(url)
+    rqst_dictonary = json.loads(request.text)
+
+    key1 = "Time Series (Daily)"
+    # date all  of themn
+    key2 = "4. close"
+
+    fil = open(ticker+".csv", "w")
+    fil.write("Date,AAPL\n")
+
+    for date in rqst_dictonary[key1]:
+        print(date + "," + rqst_dictonary[key1][date][key2])
+        fil.write(date + "," + rqst_dictonary[key1][date][key2]+"\n")
+
+    fil.close()
+
+def data_extraction():
+    tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
+                'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
+    for ticker in tickers:
+        processing_json(ticker)
+
