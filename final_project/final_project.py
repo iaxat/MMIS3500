@@ -43,7 +43,7 @@ def processing_json(ticker):
 
 def data_extraction():
     tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
-                'JPM', 'MSFT', 'TSLA', 'TTM', 'XOM']
+                'JPM', 'MSFT']
     for ticker in tickers:
         processing_json(ticker)
         time.sleep(1)
