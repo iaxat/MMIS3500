@@ -22,7 +22,6 @@ import time
 # requests imported to handle API key
 # wait for 1 sec
 
-
 def processing_json(ticker):
     url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
         ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
