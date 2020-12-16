@@ -47,6 +47,7 @@ def web_json(ticker):
         if date == last_date:
             break
         # print(date + "," + req_dct[key1][date][key2])
+        fil.write(date + "," + req_dct[key1][date][key2]+"\n")
         new_lines.append(date + "," + req_dct[key1][date][key2]+"\n")
     
     new_lines = new_lines[::-1]
