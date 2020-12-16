@@ -62,3 +62,10 @@ print(p1.calc_avg_grades())
 # Continuation of Classes and Objects
 # The getter and setters are in this section for the program whose functions have been defined above
 
+
+
+# Section 10.5
+
+# Section 10.6
+# Card Shuffling
+
