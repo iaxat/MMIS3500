@@ -50,6 +50,8 @@ def append(ticker):
     csv_file = open(ticker + ".csv", "a")  # opening the file to append data
     csv_file.writelines(new_lines)  # appending new data
     csv_file.close()
+
+    return csv_file
     # function ends here
 
 def process_json(ticker):
@@ -76,6 +78,8 @@ def process_json(ticker):
     write_lines = write_lines[::-1]
     csv_file.writelines(write_lines)
     csv_file.close()
+
+    return csv_file
 
 
 def meanReversionStrategy(prices, file):
@@ -243,7 +247,6 @@ def bb(prices, file):
 
 def results():
     final_result = {}
-    prices = []
     tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
                'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
     for ticker in tickers:
@@ -251,4 +254,11 @@ def results():
             append(ticker)
         else:
             process_json(ticker)
+
+        file = open(ticker+".csv")
+        lines = file.readlines()[1:]
+        prices = [line.split(",")[1] for line in lines]
+        
+
+
 results()
