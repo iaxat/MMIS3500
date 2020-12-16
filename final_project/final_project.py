@@ -44,6 +44,8 @@ def append_data():
     write_lines = write_lines[::-1]
     csv_file.writelines(write_lines)
     csv_file.close()
+
+    return 
     # function ends here
 
 def meanReversionStrategy(prices, file):
