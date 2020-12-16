@@ -60,8 +60,6 @@ def web_json(ticker):
 
 
 
-
-
 # Starting Program
 tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
                  'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
@@ -70,15 +68,110 @@ for ticker in tickers:
     time.sleep(13)
     web_json(ticker)
 
-# 1 strategy Mean Reversion Technique
-# def mean_reversion():
+
+mean_reversion_dict = {}
+simple_average_dict = {}
+
+def meanReversionStrategy(prices, file):
+    add = 0  # variable for adding total
+    counter = 0  # counter to understand how many counts are there
+    buy = 0
+    iterative_profit = 0
+    total_profit = 0
+    first_buy = 0
+
+    # Getting back to Moving Average
+    i = 0
+    for price in prices:
+        add += price
+        counter += 1
+        if i >= 5:
+            current_price = price
+            moving_average = (prices[i-1] + prices[i-2] +
+                              prices[i-3] + prices[i-4] + prices[i-5]) / 5
+            # print("The Moving Average for last 5 days is", moving_average)
+
+            if (current_price < 0.95*moving_average) and buy == 0:
+                buy = current_price
+                print("Buying the Stock", buy)
+                if first_buy == 0:
+                    first_buy = buy
+                    print("The first buy is at: ", first_buy)
+
+            elif (current_price > 1.05*moving_average) and buy != 0:
+                print("Selling stock at: ", current_price)
+                iterative_profit = current_price - buy
+                buy = 0
+                print("This trade Profit is: ", iterative_profit)
+                total_profit += iterative_profit
+                print("")
+
+        i += 1  # Iteration changes the loop process
+
+    # Now processing the profits
+    print("-----------------------MEAN REVERSION total profits earned from the first buy----------------------")
+    final_profit_percent = (total_profit/first_buy) * 100
+    print("")
+    print("The total profit percentage is: ", final_profit_percent)
+    print("")
+
+    mean_reversion_dict[file] = {
+        'total profit': total_profit, 'profit percent': final_profit_percent}
+
+    # Unrelated but was in the class video so added
+    total_avg = add/counter
+    print("Total Average for price for the whole list is: ", total_avg)
 
 
-# 2 strategy Simple Moving Average
-# def moving_average():
+# Function for simple moving average
+def simpleMovingAverage(prices, file):
+    add = 0  # variable for adding total
+    counter = 0  # counter to understand how many counts are there
+    buy = 0
+    iterative_profit = 0
+    total_profit = 0
+    first_buy = 0
 
+    # Getting back to Moving Average
+    i = 0
+    for price in prices:
+        add += price
+        counter += 1
+        if i >= 5:
+            current_price = price
+            moving_average = (
+                prices[i-1] + prices[i-2] + prices[i-3] + prices[i-4] + prices[i-5]) / 5
+            # print("The Moving Average for last 5 days is", moving_average)
 
-# 3 strategy Simple Average
-# def simple_average():
+            if (current_price > moving_average) and buy == 0:
+                buy = current_price
+                print("Buying the Stock", buy)
+                if first_buy == 0:
+                    first_buy = buy
+                    print("The first buy is at: ", first_buy)
+
+            elif (current_price < moving_average) and buy != 0:
+                print("Selling stock at: ", current_price)
+                iterative_profit = current_price - buy
+                buy = 0
+                print("This trade Profit is: ", iterative_profit)
+                total_profit += iterative_profit
+                print("")
+
+        i += 1  # Iteration changes the loop process
+
+    # Now processing the profits
+    print("-----------------------SIMPLE MOVING total profits earned from the first buy----------------------")
+    final_profit_percent = (total_profit/first_buy) * 100
+    print("")
+    print("The total profit percentage is: ", final_profit_percent)
+    print("")
+
+    # Unrelated but was in the class video so added
+    total_avg = add/counter
+    print("Total Average for price for the whole list is: ", total_avg)
+
+    simple_average_dict[file] = {
+        'total profit': total_profit, 'profit percent': final_profit_percent}
 
 
