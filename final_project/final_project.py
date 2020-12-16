@@ -34,7 +34,7 @@ def processing_json(ticker):
     key2 = "4. close"
 
     fil = open(ticker+".csv", "w")
-    fil.write("Date,AAPL\n")
+    fil.write("Date,price\n")
 
     for date in rqst_dictonary[key1]:
         print(date + "," + rqst_dictonary[key1][date][key2])
@@ -44,7 +44,9 @@ def processing_json(ticker):
 
 def data_extraction():
     tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
-                'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
+                'JPM', 'MSFT', 'TSLA', 'TTM', 'XOM']
     for ticker in tickers:
         processing_json(ticker)
 
+if __name__ == "__main__":
+    data_extraction()

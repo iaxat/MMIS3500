@@ -1,8 +1,8 @@
 import requests
 import json
+import time
 
-
-ticker = 'AAPL'
+ticker = 'TMUS'
 url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
     ticker+'&outputsize=full&apikey=3D9FOUWO02NOZH93'
 request = requests.get(url)
@@ -13,10 +13,10 @@ key1 = "Time Series (Daily)"
 key2 = "4. close"
 
 fil = open(ticker+".csv","w")
-fil.write("Date,AAPL\n")
+fil.write("Date,price\n")
 
 for date in rqst_dictonary[key1]:
-    print(date + "," + rqst_dictonary[key1][date][key2])
-    fil.write(date + "," + rqst_dictonary[key1][date][key2]+"\n")
+    print(rqst_dictonary[key1][date][key2])
+    fil.write(date+","+rqst_dictonary[key1][date][key2]+"\n")
 
 fil.close()
