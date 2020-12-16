@@ -61,13 +61,14 @@ def web_json(ticker):
 def price_list(file):
     
 
+
 # Starting Program
 tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
                  'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
 
 for ticker in tickers:
     time.sleep(13)
-    web_json(ticker)
+    price_list(web_json(ticker))
 
 
 mean_reversion_dict = {}
