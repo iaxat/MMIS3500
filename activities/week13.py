@@ -8,3 +8,4 @@ url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
     ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
 
 print('The json process')
+
