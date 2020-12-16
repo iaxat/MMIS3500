@@ -47,8 +47,8 @@ tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
                  'JPM']
 
 for ticker in tickers:
-
     web_json(ticker)
+
 
 
 # processing_json()
