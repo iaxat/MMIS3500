@@ -177,7 +177,7 @@ for ticker in tickers:
     price_list(web_json(ticker))
 
 
-# append makes data dissaoear
+# append makes data dissapear
 # just pick price list from csv
 # result.json should be like?
 # 
