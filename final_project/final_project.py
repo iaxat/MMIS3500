@@ -48,9 +48,9 @@ def append_data(ticker):
     fil = open(ticker + ".csv", "a")
     fil.writelines(new_lines)
     fil.close()
-
+    
     return fil
-# function ends here
+    # function ends here
 
 def meanReversionStrategy(prices, file):
     results_dict = {}
@@ -216,10 +216,21 @@ def bb(prices, file):
 
 
 
-def results(algo1,algo2,algo3):
+def results():
     final_result = {}
+    prices = []
     tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
                'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
     for ticker in tickers:
         append_data(ticker)
         time.sleep(13)
+        file = open(ticker+".csv","r") # need full path
+        lines = file.readlines() #[1:]  [1:] skips the first line, the header
+        for line in lines:
+            price = float(line.split(",")[1])
+            prices.append(price)
+        # prices = [line.split(",")[1] for line in lines] # you need to split each 
+        # line, to get the price from the csv
+    print(prices)
+    
+results()
