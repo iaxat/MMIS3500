@@ -17,3 +17,6 @@ print(rqst_dict)
 
 
 json.dump(rqst_dict,open(ticker+".csv", "w"))
+
+
+# Processing JSON
