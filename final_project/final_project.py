@@ -27,7 +27,9 @@ def web_json(ticker):
     req = requests.get(url)
 
     req_dct = json.loads(req.text)
+    # Converting to Dictionary 
     json.dump(req_dct, open(ticker+".json","w"))
+    # Converting to json file format
 
     key1 = "Time Series (Daily)"
     key2 = "4. close"
