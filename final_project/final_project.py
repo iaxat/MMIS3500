@@ -52,10 +52,6 @@ def append_data(ticker):
     return fil
 # function ends here
 
-# def price_list(file):
-
-
-
 def meanReversionStrategy(prices, file):
     results_dict = {}
     add = 0  # variable for adding total
