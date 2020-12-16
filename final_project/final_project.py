@@ -32,11 +32,11 @@ def web_json():
 web_json()
 
 def processing_json():
-    # ticker = 'AAPL'
-    # url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
-    #     ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
-    # request = requests.get(url)
-    rqst_dictonary = json.loads("AAPL.json")
+    ticker = 'AAPL'
+    url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
+        ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
+    req = requests.get(url)
+    req_dictonary = json.loads(req.text)
 
     key1 = "Time Series (Daily)"
     # date all  of themn
@@ -45,9 +45,9 @@ def processing_json():
     fil = open(ticker+".csv", "w")
     fil.write("Date,price\n")
 
-    for date in rqst_dictonary[key1]:
-        # print(date + "," + rqst_dictonary[key1][date][key2])
-        fil.write(date + "," + rqst_dictonary[key1][date][key2]+"\n")
+    for date in req_dictonary[key1]:
+        # print(date + "," + req_dictonary[key1][date][key2])
+        fil.write(date + "," + req_dictonary[key1][date][key2]+"\n")
     fil.close()
 processing_json()
 # def data_extraction():
