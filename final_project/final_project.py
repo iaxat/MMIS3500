@@ -1,7 +1,5 @@
 # This is Final Project for course MIS 3500
-
 # Project chosen for the Final project is '1'
-
 # The project is based on Stock Market
 
 # Pre-requisites of the Project
