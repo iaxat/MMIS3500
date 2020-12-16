@@ -9,7 +9,6 @@
 # 4. Three Analysis on the data
 # 5. Results inside results.json
 
-
 # API Key = NG9C9EPVYBMQT0C8
 
 # Library imports
@@ -31,12 +30,11 @@ def append_data(ticker):
     key1 = "Time Series (Daily)"
     key2 = "4. close"
 
-    fil = open(ticker+".csv", "r")
+    fil = open(ticker+".csv", "w")
     lines = fil.readlines()
     last_date = lines[-1].split(",")[0]
 
     new_lines = []
-
     for date in req_dct[key1]:
         if date == last_date:
             break
@@ -216,21 +214,20 @@ def bb(prices, file):
 
 
 
-def results():
-    final_result = {}
-    prices = []
-    tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
-               'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
-    for ticker in tickers:
-        append_data(ticker)
-        time.sleep(13)
-        file = open(ticker+".csv","r") # need full path
-        lines = file.readlines() #[1:]  [1:] skips the first line, the header
-        for line in lines:
-            price = float(line.split(",")[1])
-            prices.append(price)
-        # prices = [line.split(",")[1] for line in lines] # you need to split each 
-        # line, to get the price from the csv
-    print(prices)
+# def results():
+#     final_result = {}
+#     prices = []
+#     tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
+#                'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
+#     for ticker in tickers:
+#         _file_ = append_data(ticker)
+#         time.sleep(13)
+#         file = open(_file_,"r") # need full path
+#         lines = file.readlines()[1:]  #[1:] skips the first line, the header
+#         # prices = [float(line.split(",")[1]) for line in lines] # you need to split each
+#         # line, to get the price from the csv
+#     print(prices)
     
-results()
+# results()
+
+append_data('AAPL')
