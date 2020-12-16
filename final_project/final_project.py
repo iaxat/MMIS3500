@@ -16,6 +16,7 @@
 import json
 import requests
 import time
+import numpy as np
 # json import to handle the json files
 # requests imported to handle API key
 # wait for 1 sec
