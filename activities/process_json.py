@@ -13,10 +13,10 @@ key1 = "Time Series (Daily)"
 key2 = "4. close"
 
 fil = open(ticker+".csv","w")
-fil.write("Date,price\n")
+fil.write("Date,AAPL\n")
 
 for date in rqst_dictonary[key1]:
-    print(rqst_dictonary[key1][date][key2])
-    fil.write(date+","+rqst_dictonary[key1][date][key2])
+    print(date + "," + rqst_dictonary[key1][date][key2])
+    fil.write(date + "," + rqst_dictonary[key1][date][key2]+"\n")
 
 fil.close()
