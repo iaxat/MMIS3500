@@ -31,7 +31,7 @@ def web_json():
 
     req_dct = json.loads(req.text)
     json.dump(req_dct, open("data.json","w"))
-    
+      
 
 web_json()
 
