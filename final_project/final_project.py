@@ -24,3 +24,4 @@ import time
 class Final_project():
     def data_extraction(self):
         tickers = ['AAPL','','','','','','','','','']
+        
