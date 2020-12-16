@@ -7,3 +7,8 @@ url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
 request = requests.get(url)
 rqst_dictonary = json.loads(request.text)
 json.dump(rqst_dictonary,open("results.json","w"))
+
+key1 = "Time Series (Daily)"
+# date all  of themn
+key2 = "4. close"
+
