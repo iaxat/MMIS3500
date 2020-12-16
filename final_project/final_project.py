@@ -22,11 +22,18 @@ import time
 # requests imported to handle API key
 # wait for 1 sec
 
+def web_json():
+    ticker = 'AAPL'
+    url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
+        ticker+'&outputsize=full&apikey=3D9FOUWO02NOZH93'
+    req = requests.get(url)
+    print(req.text)
 
+    req_dct = json.loads(req.text)
+    json.dump(req_dct, open("data.json","w"))
+    
 
-
-
-
+web_json()
 
 
 # def processing_json(ticker):
