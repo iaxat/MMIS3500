@@ -16,3 +16,6 @@ fil.write("Date,price\n")
 
 for date in rqst_dictonary[key1]:
     print(rqst_dictonary[key1][date][key2])
+    fil.write(date+","+rqst_dictonary[key1][date][key2])
+
+fil.close()
