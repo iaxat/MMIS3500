@@ -58,7 +58,8 @@ def web_json(ticker):
     return fil
 # function ends here
 
-
+def price_list(file):
+    
 
 # Starting Program
 tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
