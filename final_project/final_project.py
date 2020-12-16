@@ -18,6 +18,8 @@ import time
 # json import to handle the json files
 # requests imported to handle API key
 # wait for 1 sec
+
+
 def append_data():
     ticker = 'AAPL'
     url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
