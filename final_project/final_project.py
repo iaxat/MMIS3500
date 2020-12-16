@@ -27,8 +27,7 @@ tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
 results_dict = {}
 
 
-def web_json():
-    ticker = 'AAPL'
+def web_json(ticker):
     url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
         ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
     # url is for creating the request for getting data
@@ -174,6 +173,7 @@ def web_json():
 
 # Program Running
 for ticker in tickers:
+    web_json(ticker)
     time.sleep(13)
     # price_list(web_json(ticker))
 
