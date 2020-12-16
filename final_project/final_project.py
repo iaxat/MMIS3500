@@ -35,17 +35,17 @@ def web_json(ticker):
     key1 = "Time Series (Daily)"
     key2 = "4. close"
 
-    fil = open(ticker+".csv","r")
-    lines = fil.readlines()
-    last_date = lines[-1].split(",")[0]
+    # fil = open(ticker+".csv","r")
+    # lines = fil.readlines()
+    # last_date = lines[-1].split(",")[0]
     fil = open(ticker+".csv", "w")
     fil.write("Date,price\n")
 
     new_lines = []
 
     for date in req_dct[key1]:
-        if date == last_date:
-            break
+        # if date == last_date:
+            # break
         # print(date + "," + req_dct[key1][date][key2])
         # fil.write(date + "," + req_dct[key1][date][key2]+"\n")
         new_lines.append(date + "," + req_dct[key1][date][key2]+"\n")
@@ -71,14 +71,14 @@ for ticker in tickers:
     web_json(ticker)
 
 # 1 strategy Mean Reversion Technique
-def mean_reversion():
+# def mean_reversion():
 
 
 # 2 strategy Simple Moving Average
-def moving_average():
+# def moving_average():
 
 
 # 3 strategy Simple Average
-def simple_average():
+# def simple_average():
 
 
