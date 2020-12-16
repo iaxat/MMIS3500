@@ -24,8 +24,7 @@ import numpy as np
 
 tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
            'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
-mean_reversion_dict = {}
-simple_average_dict = {}
+results_dict = {}
 
 
 def web_json(ticker):
@@ -66,14 +65,7 @@ def web_json(ticker):
 # function ends here
 
 def price_list(file):
-    
-
-
-
-
-for ticker in tickers:
-    time.sleep(13)
-    price_list(web_json(ticker))
+        
 
 
 def meanReversionStrategy(prices, file):
@@ -119,7 +111,7 @@ def meanReversionStrategy(prices, file):
     print("The total profit percentage is: ", final_profit_percent)
     print("")
 
-    mean_reversion_dict[file] = {
+    results_dict[file] = {
         'total profit': total_profit, 'profit percent': final_profit_percent}
 
     # Unrelated but was in the class video so added
@@ -175,7 +167,11 @@ def simpleMovingAverage(prices, file):
     total_avg = add/counter
     print("Total Average for price for the whole list is: ", total_avg)
 
-    simple_average_dict[file] = {
+    results_dict[file] = {
         'total profit': total_profit, 'profit percent': final_profit_percent}
 
 
+# Program Running
+for ticker in tickers:
+    time.sleep(13)
+    price_list(web_json(ticker))
