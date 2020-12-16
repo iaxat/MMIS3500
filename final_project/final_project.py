@@ -46,7 +46,7 @@ tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
 
 
 for ticker in tickers:
-    time.sleep(30)
+    time.sleep(20)
     web_json(ticker)
 
 
