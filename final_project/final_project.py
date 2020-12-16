@@ -10,9 +10,9 @@
 # 3. Auto-update
 # 4. Three Analysis on the data
 # 5. Results inside results.json
+# NG9C9EPVYBMQT0C8
 
-
-# API Key Generated and used = 3D9FOUWO02NOZH93
+# API Key Generated = 3D9FOUWO02NOZH93
 
 # Library imports
 import json
