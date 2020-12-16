@@ -20,8 +20,38 @@ import time
 # wait for 1 sec
 
 
-def append_data():
-    ticker = 'AAPL'
+def append(ticker):
+    url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
+        ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
+    req = requests.get(url)
+    time.sleep(12)
+
+    req_dict = json.loads(req.text)
+
+    print(req_dict.keys())
+
+    key1 = "Time Series (Daily)"  # dictionary with all prices by date
+    key2 = '4. close'
+
+    csv_file = open(ticker + ".csv", "r")
+    lines = csv_file.readlines()
+    last_date = lines[-1].split(",")[0]
+
+    new_lines = []
+    for date in req_dict[key1]:
+        if date == last_date:
+            break
+        print(date + "," + req_dict[key1][date][key2])  # print key, value
+        new_lines.append(date + "," + req_dict[key1][date][key2]+"\n")
+
+    new_lines = new_lines[::-1]
+    csv_file = open(ticker + ".csv", "a")  # opening the file to append data
+    csv_file.writelines(new_lines)  # appending new data
+    csv_file.close()
+    # function ends here
+
+def process_json(ticker):
+
     url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
         ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
     req = requests.get(url)
@@ -45,8 +75,6 @@ def append_data():
     csv_file.writelines(write_lines)
     csv_file.close()
 
-    return 
-    # function ends here
 
 def meanReversionStrategy(prices, file):
     results_dict = {}
@@ -212,20 +240,18 @@ def bb(prices, file):
 
 
 
-# def results():
-#     final_result = {}
-#     prices = []
-#     tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
-#                'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
-#     for ticker in tickers:
-#         _file_ = append_data(ticker)
-#         time.sleep(13)
-#         file = open(_file_,"r") # need full path
-#         lines = file.readlines()[1:]  #[1:] skips the first line, the header
-#         # prices = [float(line.split(",")[1]) for line in lines] # you need to split each
-#         # line, to get the price from the csv
-#     print(prices)
+def results():
+    final_result = {}
+    prices = []
+    tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
+               'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
+    for ticker in tickers:
+        _file_ = append_data(ticker)
+        time.sleep(13)
+        file = open(_file_,"r") # need full path
+        lines = file.readlines()[1:]  #[1:] skips the first line, the header
+        # prices = [float(line.split(",")[1]) for line in lines] # you need to split each
+        # line, to get the price from the csv
+    print(prices)
     
-# results()
-
-append_data()
+results()
