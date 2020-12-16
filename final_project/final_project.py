@@ -21,9 +21,9 @@ import time
 # wait for 1 sec
 
 def web_json(ticker):
-    # ticker = 'AAPL'
     url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
         ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
+    # url is for creating the request for getting data
     req = requests.get(url)
 
     req_dct = json.loads(req.text)
