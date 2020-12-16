@@ -20,7 +20,7 @@ import requests
 import time
 # json import to handle the json files
 # requests imported to handle API key
-
+# wait for 1 sec
 
 
 def processing_json(ticker):
@@ -47,6 +47,7 @@ def data_extraction():
                 'JPM', 'MSFT', 'TSLA', 'TTM', 'XOM']
     for ticker in tickers:
         processing_json(ticker)
+        time.sleep(1)
 
 if __name__ == "__main__":
     data_extraction()
