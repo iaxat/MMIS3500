@@ -1,4 +1,4 @@
-# This is Final Project
+# This is Final Project for course MIS 3500
 
 # Project chosen for the Final project is '1'
 
@@ -21,4 +21,6 @@ import time
 # json import to handle the json files
 # requests imported to handle API key
 
-class final_project():
+class Final_project():
+    def data_extraction(self):
+        tickers = ['AAPL','','','','','','','','','']

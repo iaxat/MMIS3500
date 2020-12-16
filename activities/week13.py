@@ -13,7 +13,7 @@ request = requests.get(url)
 print(request.text)
 
 rqst_dict = json.loads(request.text)
-print(rqst_dict)
+print(rqst_dict.keys)
 
 json.dump(rqst_dict,open(ticker+".csv", "w"))
 
