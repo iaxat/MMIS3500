@@ -16,4 +16,4 @@ rqst_dict = json.loads(request.text)
 print(rqst_dict)
 
 
-json.dump(rqst_dict,open(ticker+'.csv', 'w'))
+json.dump(rqst_dict,open(ticker+".csv", "w"))
