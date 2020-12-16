@@ -25,7 +25,7 @@ import time
 
 def processing_json(ticker):
     url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
-        ticker+'&outputsize=full&apikey=3D9FOUWO02NOZH93'
+        ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
     request = requests.get(url)
     rqst_dictonary = json.loads(request.text)
 
@@ -37,9 +37,8 @@ def processing_json(ticker):
     fil.write("Date,price\n")
 
     for date in rqst_dictonary[key1]:
-        print(date + "," + rqst_dictonary[key1][date][key2])
+        # print(date + "," + rqst_dictonary[key1][date][key2])
         fil.write(date + "," + rqst_dictonary[key1][date][key2]+"\n")
-
     fil.close()
 
 def data_extraction():
