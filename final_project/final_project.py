@@ -17,8 +17,8 @@
 # Library imports
 import json
 import requests
+import time
 # json import to handle the json files
 # requests imported to handle API key
 
 class final_project():
-    
