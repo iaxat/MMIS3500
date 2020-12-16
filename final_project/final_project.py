@@ -15,6 +15,8 @@
 import json
 import requests
 import time
+import os.path
+from os import path
 # json import to handle the json files
 # requests imported to handle API key
 # wait for 1 sec
@@ -84,7 +86,6 @@ def meanReversionStrategy(prices, file):
     iterative_profit = 0
     total_profit = 0
     first_buy = 0
-
     # Getting back to Moving Average
     i = 0
     for price in prices:
@@ -246,12 +247,8 @@ def results():
     tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
                'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
     for ticker in tickers:
-        _file_ = append_data(ticker)
-        time.sleep(13)
-        file = open(_file_,"r") # need full path
-        lines = file.readlines()[1:]  #[1:] skips the first line, the header
-        # prices = [float(line.split(",")[1]) for line in lines] # you need to split each
-        # line, to get the price from the csv
-    print(prices)
-    
+        if path.isfile(ticker + ".csv"):
+            append(ticker)
+        else:
+            process_json(ticker)
 results()
