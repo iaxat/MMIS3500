@@ -4,4 +4,7 @@ import requests
 import json
 
 ticker = 'AAPL'
-url = ''
+url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
+    ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
+
+
