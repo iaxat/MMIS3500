@@ -23,7 +23,7 @@ import time
 def web_json(ticker):
     # ticker = 'AAPL'
     url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
-        ticker+'&outputsize=full&apikey=3D9FOUWO02NOZH93'
+        ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
     req = requests.get(url)
     # print(req.text)
 
@@ -31,15 +31,7 @@ def web_json(ticker):
     json.dump(req_dct, open(ticker+".json","w"))
 
 
-    # def processing_json():
-    #     ticker = 'AAPL'
-    #     url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
-    #         ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
-    #     req = requests.get(url)
-    #     req_dictonary = json.loads(req.text)
-
     key1 = "Time Series (Daily)"
-    # date all  of themn
     key2 = "4. close"
 
     fil = open(ticker+".csv", "w")
