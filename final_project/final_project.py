@@ -70,5 +70,15 @@ for ticker in tickers:
     time.sleep(13)
     web_json(ticker)
 
+# 1 strategy Mean Reversion Technique
+def mean_reversion():
 
-def analysis
+
+# 2 strategy Simple Moving Average
+def moving_average():
+
+
+# 3 strategy Simple Average
+def simple_average():
+
+
