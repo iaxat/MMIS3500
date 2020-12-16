@@ -12,4 +12,11 @@
 # 5. Results inside results.json
 
 
+# API Key Generated and used = 3D9FOUWO02NOZH93
+
+# Library imports
+import json
+import requests
+# json import to handle the json files
+# requests imported to handle API key
 

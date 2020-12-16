@@ -3,7 +3,7 @@ import json
 
 ticker = 'AAPL'
 url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
-    ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
+    ticker+'&outputsize=full&apikey=3D9FOUWO02NOZH93'
 request = requests.get(url)
 rqst_dictonary = json.loads(request.text)
 
