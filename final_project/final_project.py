@@ -44,6 +44,8 @@ def web_json(ticker):
     fil.close()
 
 
+
+# Starting Program
 tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
                  'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
 
