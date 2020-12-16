@@ -38,9 +38,13 @@ def web_json(ticker):
     fil = open(ticker+".csv", "w")
     fil.write("Date,price\n")
 
+    write_lines = []
+
     for date in req_dct[key1]:
         # print(date + "," + req_dct[key1][date][key2])
-        fil.write(date + "," + req_dct[key1][date][key2]+"\n")
+        write_lines.append(date + "," + req_dct[key1][date][key2]+"\n")
+    write_lines = write_lines[::-1]
+    fil.writelines
     fil.close()
 
 
