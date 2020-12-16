@@ -47,13 +47,18 @@ def web_json(ticker):
         if date == last_date:
             break
         # print(date + "," + req_dct[key1][date][key2])
-        fil.write(date + "," + req_dct[key1][date][key2]+"\n")
+        # fil.write(date + "," + req_dct[key1][date][key2]+"\n")
         new_lines.append(date + "," + req_dct[key1][date][key2]+"\n")
     
     new_lines = new_lines[::-1]
     fil = open(ticker + ".csv", "a")
     fil.writelines(new_lines)
     fil.close()
+
+    return fil
+# function ends here
+
+
 
 
 
@@ -64,3 +69,6 @@ tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
 for ticker in tickers:
     time.sleep(13)
     web_json(ticker)
+
+
+def analysis
