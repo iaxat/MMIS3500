@@ -86,8 +86,6 @@ def meanReversionStrategy(prices, file):
     print("\t !!!!!Starting Mean Reversion Strategy for!!!!!",file)
     print("")
     results_dict = {}
-    add = 0  # variable for adding total
-    counter = 0  # counter to understand how many counts are there
     buy = 0
     iterative_profit = 0
     total_profit = 0
@@ -95,8 +93,6 @@ def meanReversionStrategy(prices, file):
     # Getting back to Moving Average
     i = 0
     for price in prices:
-        add += price
-        counter += 1
         if i >= 5:
             current_price = price
             moving_average = (prices[i-1] + prices[i-2] +
@@ -143,15 +139,13 @@ def meanReversionStrategy(prices, file):
 
     return results_dict
 
-
+# //////////////////////////////////////////////////
 # Function for simple moving average
 def simpleMovingAverage(prices, file):
     print("")
     print("\t !!!!!Starting Simple Moving Average for!!!!!", file)
     print("")
     results_dict = {}
-    add = 0  # variable for adding total
-    counter = 0  # counter to understand how many counts are there
     buy = 0
     iterative_profit = 0
     total_profit = 0
@@ -160,8 +154,6 @@ def simpleMovingAverage(prices, file):
     # Getting back to Moving Average
     i = 0
     for price in prices:
-        add += price
-        counter += 1
         if i >= 5:
             current_price = price
             moving_average = (
@@ -207,14 +199,12 @@ def simpleMovingAverage(prices, file):
 
     return results_dict
 
-
+# ///////////////////////////////////////////////////////////
 def bb(prices, file):
     print("")
     print("\t !!!!!!Starting Bollinger Bands Strategy for!!!!!!", file)
     print("")
     results_dict = {}
-    add = 0  # variable for adding total
-    counter = 0  # counter to understand how many counts are there
     buy = 0
     iterative_profit = 0
     total_profit = 0
@@ -223,8 +213,6 @@ def bb(prices, file):
     # Getting back to Moving Average
     i = 0
     for price in prices:
-        add += price
-        counter += 1
         if i >= 5:
             current_price = price
             moving_average = (prices[i-1] + prices[i-2] +
@@ -271,7 +259,7 @@ def bb(prices, file):
     return results_dict
 
 
-
+# /////////////////////////////////////////////////
 def results():
     final_result = {}
     highest_profit = 0
