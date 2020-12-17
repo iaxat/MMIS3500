@@ -139,7 +139,7 @@ def meanReversionStrategy(prices, file):
     print("-----------------------------------------------------------------------------------------------------")
 
     results_dict[file] = {
-        'total profit': total_profit, 'profit percent': final_profit_percent}
+        'total profit': total_profit, 'profit percent': final_profit_percent, 'strategy': "Mean Reversion"}
 
     return results_dict
 
@@ -202,7 +202,7 @@ def simpleMovingAverage(prices, file):
     print("-----------------------------------------------------------------------------------------------------")
 
     results_dict[file] = {
-        'total profit': total_profit, 'profit percent': final_profit_percent}
+        'total profit': total_profit, 'profit percent': final_profit_percent, 'strategy': "Simple Moving Average"}
 
     return results_dict
 
@@ -264,7 +264,7 @@ def bb(prices, file):
     print("-----------------------------------------------------------------------------------------------------")
 
     results_dict[file] = {
-        'total profit': total_profit, 'profit percent': final_profit_percent}
+        'total profit': total_profit, 'profit percent': final_profit_percent, 'strategy': "Bollinger Bands"}
     print(results_dict)
     return results_dict
 
