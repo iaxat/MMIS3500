@@ -82,6 +82,9 @@ def process_json(ticker):
 
 # --------------------------------------------------------------------------------------------------------------------------------
 def meanReversionStrategy(prices, file):
+    print("")
+    print("\tStarting Mean Reversion Strategy for",file)
+    print("")
     results_dict = {}
     add = 0  # variable for adding total
     counter = 0  # counter to understand how many counts are there
@@ -143,6 +146,9 @@ def meanReversionStrategy(prices, file):
 
 # Function for simple moving average
 def simpleMovingAverage(prices, file):
+    print("")
+    print("\tStarting Simple Moving Average for", file)
+    print("")
     results_dict = {}
     add = 0  # variable for adding total
     counter = 0  # counter to understand how many counts are there
@@ -203,6 +209,9 @@ def simpleMovingAverage(prices, file):
 
 
 def bb(prices, file):
+    print("")
+    print("\tStarting Bollinger Bands Strategy for", file)
+    print("")
     results_dict = {}
     add = 0  # variable for adding total
     counter = 0  # counter to understand how many counts are there
