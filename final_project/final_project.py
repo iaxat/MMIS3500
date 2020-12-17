@@ -265,14 +265,16 @@ def bb(prices, file):
 
     results_dict[file] = {
         'total profit': total_profit, 'profit percent': final_profit_percent}
-
+    print(results_dict)
     return results_dict
 
 
 # /////////////////////////////////////////////////
 def results():
     final_result = {}
-    highest_profit = 0
+    high_returns = 0
+    high_returns_ticker = ""
+    high_returns_strategy = ""
     print("")
     print("")
     print("!!!The final project API requests are at an interval of 13 seconds each!!!")
@@ -288,11 +290,13 @@ def results():
         file = open(ticker+".csv")
         lines = file.readlines()[1:]
         prices = [float(line.split(",")[1]) for line in lines]
+        
         # Mean Reversion Strategy calling function
         meanReversionStrategy(prices, ticker+".csv")
-                                                    # Simple Moving Strategy calling function
+        # Simple Moving Strategy calling function
         simpleMovingAverage(prices, ticker+".csv")
-        bb(prices, ticker+".csv")  # Bollinger Bands Strategy calling function
+        # Bollinger Bands Strategy calling function
+        bb(prices, ticker+".csv")  
 
 
 results()
