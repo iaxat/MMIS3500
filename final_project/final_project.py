@@ -80,7 +80,7 @@ def process_json(ticker):
 
     return csv_file
 
-
+# --------------------------------------------------------------------------------------------------------------------------------
 def meanReversionStrategy(prices, file):
     results_dict = {}
     add = 0  # variable for adding total
@@ -101,13 +101,18 @@ def meanReversionStrategy(prices, file):
             # print("The Moving Average for last 5 days is", moving_average)
 
             if (current_price > 0.95*moving_average) and buy == 0:
+                if i == len(prices) - 1:
+                    print("buying today")
                 buy = current_price
                 print("Buying the Stock", buy)
                 if first_buy == 0:
                     first_buy = buy
+
                     print("The first buy is at: ", first_buy)
 
             elif (current_price < 1.05*moving_average) and buy != 0:
+                if i == len(prices) - 1:
+                    print("selling today")
                 print("Selling stock at: ", current_price)
                 iterative_profit = current_price - buy
                 buy = 0
@@ -154,6 +159,8 @@ def simpleMovingAverage(prices, file):
             # print("The Moving Average for last 5 days is", moving_average)
 
             if (current_price > moving_average) and buy == 0:
+                if i == len(prices) - 1:
+                    print("buying today")
                 buy = current_price
                 print("Buying the Stock", buy)
                 if first_buy == 0:
@@ -161,6 +168,8 @@ def simpleMovingAverage(prices, file):
                     print("The first buy is at: ", first_buy)
 
             elif (current_price < moving_average) and buy != 0:
+                if i == len(prices) - 1:
+                    print("selling today")
                 print("Selling stock at: ", current_price)
                 iterative_profit = current_price - buy
                 buy = 0
@@ -206,6 +215,8 @@ def bb(prices, file):
             # print("The Moving Average for last 5 days is", moving_average)
 
             if (current_price < 0.95*moving_average) and buy == 0:
+                if i == len(prices) - 1:
+                    print("buying today")
                 buy = current_price
                 print("Buying the Stock", buy)
                 if first_buy == 0:
@@ -213,6 +224,8 @@ def bb(prices, file):
                     print("The first buy is at: ", first_buy)
 
             elif (current_price > 1.05*moving_average) and buy != 0:
+                if i == len(prices) - 1:
+                    print("selling today")
                 print("Selling stock at: ", current_price)
                 iterative_profit = current_price - buy
                 buy = 0
