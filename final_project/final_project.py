@@ -25,7 +25,7 @@ def append(ticker):
     url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
         ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
     req = requests.get(url)
-    time.sleep(12)
+    time.sleep(13)
 
     req_dict = json.loads(req.text)
 
@@ -58,7 +58,7 @@ def process_json(ticker):
     url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
         ticker+'&outputsize=full&apikey=NG9C9EPVYBMQT0C8'
     req = requests.get(url)
-    time.sleep(12)
+    time.sleep(13)
 
     req_dict = json.loads(req.text)
 
@@ -252,9 +252,9 @@ def results():
         file = open(ticker+".csv")
         lines = file.readlines()[1:]
         prices = [float(line.split(",")[1]) for line in lines]
-        meanReversionStrategy(prices,ticker+".csv")
-        simpleMovingAverage(prices, ticker+".csv")
-        bb(prices, ticker+".csv")
+        meanReversionStrategy(prices,ticker+".csv") # Mean Reversion Strategy calling function
+        simpleMovingAverage(prices, ticker+".csv") # Simple Moving Strategy calling function
+        bb(prices, ticker+".csv") # Bollinger Bands Strategy calling function
 
 
 results()
