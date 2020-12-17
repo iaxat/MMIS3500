@@ -102,7 +102,9 @@ def meanReversionStrategy(prices, file):
 
             if (current_price > 0.95*moving_average) and buy == 0:
                 if i == len(prices) - 1:
+                    print("")
                     print("buying today")
+                    print("")
                 buy = current_price
                 print("Buying the Stock", buy)
                 if first_buy == 0:
@@ -112,7 +114,9 @@ def meanReversionStrategy(prices, file):
 
             elif (current_price < 1.05*moving_average) and buy != 0:
                 if i == len(prices) - 1:
+                    print("")
                     print("selling today")
+                    print("")
                 print("Selling stock at: ", current_price)
                 iterative_profit = current_price - buy
                 buy = 0
@@ -160,7 +164,9 @@ def simpleMovingAverage(prices, file):
 
             if (current_price > moving_average) and buy == 0:
                 if i == len(prices) - 1:
+                    print("")
                     print("buying today")
+                    print("")
                 buy = current_price
                 print("Buying the Stock", buy)
                 if first_buy == 0:
@@ -169,7 +175,9 @@ def simpleMovingAverage(prices, file):
 
             elif (current_price < moving_average) and buy != 0:
                 if i == len(prices) - 1:
+                    print("")
                     print("selling today")
+                    print("")
                 print("Selling stock at: ", current_price)
                 iterative_profit = current_price - buy
                 buy = 0
@@ -216,7 +224,9 @@ def bb(prices, file):
 
             if (current_price < 0.95*moving_average) and buy == 0:
                 if i == len(prices) - 1:
+                    print("")
                     print("buying today")
+                    print("")
                 buy = current_price
                 print("Buying the Stock", buy)
                 if first_buy == 0:
@@ -225,7 +235,9 @@ def bb(prices, file):
 
             elif (current_price > 1.05*moving_average) and buy != 0:
                 if i == len(prices) - 1:
+                    print("")
                     print("selling today")
+                    print("")
                 print("Selling stock at: ", current_price)
                 iterative_profit = current_price - buy
                 buy = 0
