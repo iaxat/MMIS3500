@@ -15,7 +15,6 @@
 import json
 import requests
 import time
-import os.path
 from os import path
 # json import to handle the json files
 # requests imported to handle API key
@@ -257,8 +256,10 @@ def results():
 
         file = open(ticker+".csv")
         lines = file.readlines()[1:]
-        prices = [line.split(",")[1] for line in lines]
-        
+        prices = [float(line.split(",")[1]) for line in lines]
+        meanReversionStrategy(prices,ticker+".csv")
+        simpleMovingAverage(prices, ticker+".csv")
+        bb(prices, ticker+".csv")
 
 
 results()
