@@ -53,6 +53,7 @@ def append(ticker):
     return csv_file
     # function ends here
 
+
 def process_json(ticker):
 
     url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + \
@@ -81,9 +82,11 @@ def process_json(ticker):
     return csv_file
 
 # --------------------------------------------------------------------------------------------------------------------------------
+
+
 def meanReversionStrategy(prices, file):
     print("")
-    print("\t !!!!!Starting Mean Reversion Strategy for!!!!!",file)
+    print("\t !!!!!Starting Mean Reversion Strategy for!!!!!", file)
     print("")
     results_dict = {}
     buy = 0
@@ -129,7 +132,7 @@ def meanReversionStrategy(prices, file):
     print("-----------------------MEAN REVERSION total profits earned from the first buy----------------------")
     final_profit_percent = (total_profit/first_buy) * 100
     print("")
-    print("For the Ticker: ",file)
+    print("For the Ticker: ", file)
     print("The total profit percentage is: ", final_profit_percent)
     print("The total Profit is: ", total_profit)
     print("")
@@ -142,6 +145,8 @@ def meanReversionStrategy(prices, file):
 
 # //////////////////////////////////////////////////
 # Function for simple moving average
+
+
 def simpleMovingAverage(prices, file):
     print("")
     print("\t !!!!!Starting Simple Moving Average for!!!!!", file)
@@ -202,6 +207,8 @@ def simpleMovingAverage(prices, file):
     return results_dict
 
 # ///////////////////////////////////////////////////////////
+
+
 def bb(prices, file):
     print("")
     print("\t !!!!!!Starting Bollinger Bands Strategy for!!!!!!", file)
@@ -281,9 +288,11 @@ def results():
         file = open(ticker+".csv")
         lines = file.readlines()[1:]
         prices = [float(line.split(",")[1]) for line in lines]
-        meanReversionStrategy(prices,ticker+".csv") # Mean Reversion Strategy calling function
-        simpleMovingAverage(prices, ticker+".csv") # Simple Moving Strategy calling function
-        bb(prices, ticker+".csv") # Bollinger Bands Strategy calling function
+        # Mean Reversion Strategy calling function
+        meanReversionStrategy(prices, ticker+".csv")
+                                                    # Simple Moving Strategy calling function
+        simpleMovingAverage(prices, ticker+".csv")
+        bb(prices, ticker+".csv")  # Bollinger Bands Strategy calling function
 
 
 results()
