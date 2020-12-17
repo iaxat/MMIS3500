@@ -171,7 +171,7 @@ def simpleMovingAverage(prices, file):
         i += 1  # Iteration changes the loop process
 
     # Now processing the profits
-    print("-----------------------BOLLINGER BANDS total profits earned from the first buy----------------------")
+    print("-----------------------SIMPLE MOVING AVERAGE total profits earned from the first buy----------------------")
     final_profit_percent = (total_profit/first_buy) * 100
     print("")
     print("For the Ticker: ", file)
@@ -223,7 +223,7 @@ def bb(prices, file):
         i += 1  # Iteration changes the loop process
 
     # Now processing the profits
-    print("-----------------------MEAN REVERSION total profits earned from the first buy----------------------")
+    print("-----------------------BOLLINGER BANDS total profits earned from the first buy----------------------")
     final_profit_percent = (total_profit/first_buy) * 100
     print("")
     print("For the Ticker: ", file)
