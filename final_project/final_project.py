@@ -241,6 +241,8 @@ def bb(prices, file):
 def results():
     final_result = {}
     highest_profit = 0
+    print("!!!The final project API requests are at an interval of 13 seconds each!!!")
+    print("")
     tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
                'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
     for ticker in tickers:
