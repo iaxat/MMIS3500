@@ -121,15 +121,13 @@ def meanReversionStrategy(prices, file):
     print("-----------------------MEAN REVERSION total profits earned from the first buy----------------------")
     final_profit_percent = (total_profit/first_buy) * 100
     print("")
+    print("For the Ticker: ",file)
     print("The total profit percentage is: ", final_profit_percent)
+    print("The total Profit is: ", total_profit)
     print("")
 
     results_dict[file] = {
         'total profit': total_profit, 'profit percent': final_profit_percent}
-
-    # Unrelated but was in the class video so added
-    total_avg = add/counter
-    print("Total Average for price for the whole list is: ", total_avg)
 
     return results_dict
 
@@ -176,12 +174,10 @@ def simpleMovingAverage(prices, file):
     print("-----------------------SIMPLE MOVING total profits earned from the first buy----------------------")
     final_profit_percent = (total_profit/first_buy) * 100
     print("")
+    print("For the Ticker: ", file)
     print("The total profit percentage is: ", final_profit_percent)
+    print("The total Profit is: ", total_profit)
     print("")
-
-    # Unrelated but was in the class video so added
-    total_avg = add/counter
-    print("Total Average for price for the whole list is: ", total_avg)
 
     results_dict[file] = {
         'total profit': total_profit, 'profit percent': final_profit_percent}
@@ -230,15 +226,13 @@ def bb(prices, file):
     print("-----------------------MEAN REVERSION total profits earned from the first buy----------------------")
     final_profit_percent = (total_profit/first_buy) * 100
     print("")
+    print("For the Ticker: ", file)
     print("The total profit percentage is: ", final_profit_percent)
+    print("The total Profit is: ", total_profit)
     print("")
 
     results_dict[file] = {
         'total profit': total_profit, 'profit percent': final_profit_percent}
-
-    # Unrelated but was in the class video so added
-    total_avg = add/counter
-    print("Total Average for price for the whole list is: ", total_avg)
 
     return results_dict
 
@@ -246,6 +240,7 @@ def bb(prices, file):
 
 def results():
     final_result = {}
+    highest_profit = 0
     tickers = ['AAPL', 'CSCO', 'FB', 'GOOGL',
                'JPM', 'MSFT', 'TMUS', 'TSLA', 'TTM', 'XOM']
     for ticker in tickers:
